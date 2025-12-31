@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import ChapterNav from '../../../components/ChapterNav'
 
 async function getChapter(slug: string) {
   try {
@@ -14,9 +15,9 @@ async function getChapter(slug: string) {
 export default async function ChapterPage({ 
   params 
 }: { 
-  params: Promise<{ slug: string }> 
+  params: { slug: string }
 }) {
-  const { slug } = await params
+  const { slug } = params
   const Chapter = await getChapter(slug)
   
   if (!Chapter) {
@@ -24,9 +25,8 @@ export default async function ChapterPage({
   }
 
   return (
-    <main className="min-h-screen bg-slate-900">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        {/* 返回首頁按鈕 */}
+    <main className="min-h-screen bg-slate-900 text-white">
+      <div className="container mx-auto px-6 py-12">
         <div className="mb-8">
           <a 
             href="/" 
@@ -35,11 +35,16 @@ export default async function ChapterPage({
             ← 返回首頁
           </a>
         </div>
-        
-        {/* MDX 內容 */}
-        <article className="prose prose-invert prose-lg prose-purple max-w-none">
-          <Chapter />
-        </article>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <aside className="md:col-span-1">
+            <ChapterNav currentSlug={slug} />
+          </aside>
+
+          <article className="md:col-span-3 prose prose-invert prose-lg prose-purple max-w-none">
+            <Chapter />
+          </article>
+        </div>
       </div>
     </main>
   )

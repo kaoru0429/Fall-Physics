@@ -20,7 +20,7 @@
     "react-dom": "^18.3.1",
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^5.2.0",
-    "zustand": "^4.4.7"
+    "zustand": "^4.5.7"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
