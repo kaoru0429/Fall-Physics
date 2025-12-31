@@ -1,0 +1,15 @@
+cat << 'EOF' > apphosting.yaml
+# Firebase App Hosting 配置
+runConfig:
+  runtime: nodejs20
+  
+  # 環境變數（如果需要）
+  # env:
+  #   - variable: GEMINI_API_KEY
+  #     secret: gemini-api-key
+
+# 建置設定
+build:
+  buildCommand: npm run build
+  outputDirectory: .next
+EOF
