@@ -1,0 +1,12 @@
+import createMDX from '@next/mdx'
+ 
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+})
+ 
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+}
+ 
+export default withMDX(nextConfig)
