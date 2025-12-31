@@ -6,8 +6,9 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   experimental: {
-    mdxRs: false,
+    mdxRs: true,
   },
+  turbopack: {},
   allowedDevOrigins: [
     '.cloudworkstations.dev',
   ],
