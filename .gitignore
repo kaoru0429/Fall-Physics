@@ -33,3 +33,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# logging
+npm_output.log
+
+# verification scripts
+/home/jules/verification
