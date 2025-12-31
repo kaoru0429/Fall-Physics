@@ -1,26 +1,10 @@
-import createMDX from '@next/mdx'
-import remarkFrontmatter from 'remark-frontmatter'
-import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  experimental: {
-    mdxRs: false,
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
   },
-  allowedDevOrigins: [
-    '.cloudworkstations.dev',
-  ],
 }
 
-const withMDX = createMDX({
-  options: {
-    remarkPlugins: [
-      remarkFrontmatter,
-      remarkMdxFrontmatter,
-    ],
-    rehypePlugins: [],
-  },
-})
-
-export default withMDX(nextConfig)
+module.exports = nextConfig
