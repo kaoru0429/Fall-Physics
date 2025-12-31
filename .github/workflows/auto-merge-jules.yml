@@ -1,0 +1,41 @@
+name: Auto-merge Jules PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    
+    # 只處理 Jules 建立的 PR
+    if: github.event.pull_request.user.login == 'jules[bot]' || contains(github.event.pull_request.labels.*.name, 'auto-merge')
+    
+    steps:
+      - name: 等待狀態檢查完成
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          check-name: 'Vercel'  # 等待 Vercel 部署完成
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
+      - name: 啟用自動合併
+        if: success()
+        run: |
+          gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 通知合併結果
+        if: success()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ PR 已自動合併！Vercel 正在部署到正式環境...'
+            })
