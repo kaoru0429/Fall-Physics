@@ -1,4 +1,44 @@
-[00:00:04.742] Server  LOG     ✓ Ready in 3.9s
-[00:00:04.743] Server  WARN    ⚠ Blocked cross-origin request from 3000-firebase-fall-physics-1767185807427.cluster-fdkw7vjj7bgguspe3fbbc25tra.cloudworkstations.dev to /_next/* resource. To allow this, configure "allowedDevOrigins" in next.config
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:00:07.873] Server  LOG     ○ Compiling /chapter/[slug] ...
+[00:00:02.333] Server  LOG     ✓ Ready in 1936ms
+[00:02:34.622] Server  LOG     ○ Compiling /chapter/[slug] ...
+[00:02:48.029] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:44.328] Server  ERROR   ⨯ Failed to generate static paths for /chapter/[slug]:
+[00:06:44.339] Server  ERROR   Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /app/.next/dev/server/webpack-runtime.js
+- /app/.next/dev/server/app/chapter/[slug]/page.js
+- /app/node_modules/next/dist/server/require.js
+- /app/node_modules/next/dist/server/load-components.js
+- /app/node_modules/next/dist/server/dev/static-paths-worker.js
+- /app/node_modules/next/dist/compiled/jest-worker/processChild.js
+[00:13:47.775] Server  ERROR   ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /app/.next/dev/server/webpack-runtime.js
+- /app/.next/dev/server/app/chapter/[slug]/page.js
+- /app/node_modules/next/dist/server/require.js
+- /app/node_modules/next/dist/server/load-components.js
+- /app/node_modules/next/dist/server/dev/static-paths-worker.js
+- /app/node_modules/next/dist/compiled/jest-worker/processChild.js
+[00:13:51.866] Browser ERROR   uncaughtError: Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /app/.next/dev/server/webpack-runtime.js
+- /app/.next/dev/server/app/chapter/[slug]/page.js
+- /app/node_modules/next/dist/server/require.js
+- /app/node_modules/next/dist/server/load-components.js
+- /app/node_modules/next/dist/server/dev/static-paths-worker.js
+- /app/node_modules/next/dist/compiled/jest-worker/processChild.js
+[00:27:19.428] Server  ERROR   ⨯ Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /app/.next/dev/server/webpack-runtime.js
+- /app/.next/dev/server/app/chapter/[slug]/page.js
+- /app/node_modules/next/dist/server/require.js
+- /app/node_modules/next/dist/server/load-components.js
+- /app/node_modules/next/dist/server/dev/static-paths-worker.js
+- /app/node_modules/next/dist/compiled/jest-worker/processChild.js
+[00:27:20.424] Browser ERROR   uncaughtError: Error: Cannot find module './vendor-chunks/@swc.js'
+Require stack:
+- /app/.next/dev/server/webpack-runtime.js
+- /app/.next/dev/server/app/chapter/[slug]/page.js
+- /app/node_modules/next/dist/server/require.js
+- /app/node_modules/next/dist/server/load-components.js
+- /app/node_modules/next/dist/server/dev/static-paths-worker.js
+- /app/node_modules/next/dist/compiled/jest-worker/processChild.js
