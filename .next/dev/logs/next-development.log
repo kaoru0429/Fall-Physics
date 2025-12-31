@@ -1,4 +1,0 @@
-[00:00:04.742] Server  LOG     ✓ Ready in 3.9s
-[00:00:04.743] Server  WARN    ⚠ Blocked cross-origin request from 3000-firebase-fall-physics-1767185807427.cluster-fdkw7vjj7bgguspe3fbbc25tra.cloudworkstations.dev to /_next/* resource. To allow this, configure "allowedDevOrigins" in next.config
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:00:07.873] Server  LOG     ○ Compiling /chapter/[slug] ...
